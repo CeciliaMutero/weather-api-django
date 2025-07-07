@@ -12,6 +12,7 @@ def get_weather(request):
     Get current weather for a given city.
     Example: /api/weather/?city=Nairobi
     """
+    print("DEBUG - request.GET:", request.GET)
     city = request.GET.get('city')  # Get ?city=Nairobi from URL
     if not city:
         return Response({"error": "City parameter is required"}, status=400)
